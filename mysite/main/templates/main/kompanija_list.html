@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<br><br>
+<h2>Kompanije</h2>
+{% for kompanija in kompanija_list %}
+    <div class="kompanija">
+        <h4>OIB: {{kompanija.kompanija_OIB}}</h4>
+        <p>Naziv: {{kompanija.kompanija_naziv}}</p>
+        <p>Email: {{kompanija.kompanija_email}}</p>
+        <p>Adresa: {{kompanija.kompanija_adresa}}</p>
+        <p>Grad: {{kompanija.kompanija_grad}}</p>
+    </div>
+{% endfor %}
+{% endblock %}
+
+
+
+
+
+
+
+

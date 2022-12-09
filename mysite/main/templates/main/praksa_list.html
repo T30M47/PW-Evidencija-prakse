@@ -1,0 +1,24 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<br><br>
+<h2>Prakse</h2>
+{% for praksa in praksa_list %}
+    <div class="praksa">
+        <h4>Student: {{praksa.student_praksa}}</h4>
+        <p>Fakultet: {{praksa.fakultet_praksa}}</p>
+        <p>Preddiplomski studij: {{praksa.student_preddiplomski}}</p>
+        <p>Kompanija: {{praksa.praksa_kompanija}}</p>
+        <p>Mentor: {{praksa.praksa_mentor}}</p>
+        <p>Datum Početka: {{praksa.datum_pocetka}}</p>
+        <p>Datum Završetka: {{praksa.datum_zavrsetka}}</p>
+        <p>Radno Mjesto: {{praksa.radno_mjesto}}</p>
+        <p>Nepomena: {{praksa.napomena}}</p>
+    </div>
+{% endfor %}
+{% endblock %}
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<br><br>
+<h2>Studenti</h2>
+{% for student in student_list %}
+    <div class="student">
+        <h4>JMBAG: {{student.student_JMBAG}}</h4>
+        <p>Ime: {{student.student_ime}}</p>
+        <p>Prezime: {{student.student_prezime}}</p>
+        <p>Email: {{student.student_email}}</p>
+        <p>Fakultet: <br>
+            {% for fakultet in student.student_fakultet.all %}{{fakultet}}<br>{% endfor %}</p>
+    </div>
+{% endfor %}
+{% endblock %}
+

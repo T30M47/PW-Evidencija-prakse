@@ -1,0 +1,64 @@
+h1 {
+    color: #05386B;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    color:#379683;
+}
+
+li {
+    list-style-type: none;
+    float:inline-start;
+}
+
+li a {
+    padding: 21px;
+    color:#05386B;
+    font-weight: bold;
+    text-decoration:underline #379683;
+
+}
+.student {
+    border-color: #379683;
+    border-style: double;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.fakultet{
+    border-color: #379683;
+    border-style: double;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.dnevnik{
+    border-color: #379683;
+    border-style: double;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.kompanija{
+    border-color: #379683;
+    border-style: double;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.mentor{
+    border-color: #379683;
+    border-style: double;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.praksa{
+    border-color: #379683;
+    border-style: double;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}

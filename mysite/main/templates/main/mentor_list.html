@@ -1,0 +1,25 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<br><br>
+<h2>Mentori</h2>
+{% for mentor in mentor_list %}
+    <div class="mentor">
+        <h4>OIB: {{mentor.mentor_OIB}}</h4>
+        <p>Ime: {{mentor.mentor_ime}}</p>
+        <p>Prezime: {{mentor.mentor_prezime}}</p>
+        <p>Email: {{mentor.mentor_email}}</p>
+        <p>Radno Mjesto: {{mentor.mentor_radnoMjesto}}</p>
+        <p>Kompanija: {{mentor.mentor_kompanija}}</p>
+    </div>
+{% endfor %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+

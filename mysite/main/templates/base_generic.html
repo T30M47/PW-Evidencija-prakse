@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <h1>Evidencija Prakse studenata</h1>
+    <div id="sidebar">
+        {% block sidebar %}
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/studenti">Studenti</a></li>
+            <li><a href="/fakulteti">Fakulteti</a></li>
+            <li><a href="/kompanije">Kompanije</a></li>
+            <li><a href="/mentori">Mentori</a></li>
+            <li><a href="/prakse">Prakse</a></li>
+            <li><a href="/dnevnici">Dnevnici studenata</a></li>
+        </ul>
+        {% endblock %}
+    </div>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
