@@ -2,9 +2,7 @@
 import factory 
 from factory.django import DjangoModelFactory
 import factory.fuzzy
-from faker import Faker
 from main.models import *
-fake=Faker()
 ## Defining a factory
 class StudentFactory(DjangoModelFactory):
     class Meta:
@@ -13,7 +11,7 @@ class StudentFactory(DjangoModelFactory):
     student_JMBAG=factory.fuzzy.FuzzyInteger(0000000000, 9999999999)
     student_ime=factory.Faker('first_name')
     student_prezime=factory.Faker('last_name')
-    student_email=fake.email()
+    student_email=factory.Faker('free_email')
     @factory.post_generation
     def fakultets(self, create, extracted, **kwargs):
         if not create:
@@ -28,7 +26,7 @@ class FakultetFactory(DjangoModelFactory):
      
     fakultet_OIB=factory.fuzzy.FuzzyInteger(00000000000, 99999999999)
     fakultet_naziv=factory.Faker('company')
-    fakultet_email=fake.email()
+    fakultet_email=factory.Faker('free_email')
     fakultet_adresa=factory.Faker('address')
     fakultet_grad=factory.Faker('city')
 
@@ -49,7 +47,7 @@ class KompanijaFactory(DjangoModelFactory):
     
     kompanija_OIB=factory.fuzzy.FuzzyInteger(00000000000, 99999999999)
     kompanija_naziv=factory.Faker('company')
-    kompanija_email=fake.email()
+    kompanija_email=factory.Faker('free_email')
     kompanija_adresa=factory.Faker('address')
     kompanija_grad=factory.Faker('city')
 
@@ -60,7 +58,7 @@ class MentorFactory(DjangoModelFactory):
     mentor_OIB=factory.fuzzy.FuzzyInteger(00000000000, 99999999999)
     mentor_ime=factory.Faker('first_name')
     mentor_prezime=factory.Faker('last_name')
-    mentor_email=fake.email()
+    mentor_email=factory.Faker('free_email')
     mentor_radnoMjesto=factory.Faker('job')
     mentor_kompanija=factory.Iterator(Kompanija.objects.all())
 
