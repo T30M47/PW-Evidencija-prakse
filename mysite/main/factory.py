@@ -74,6 +74,7 @@ class PraksaFactory(DjangoModelFactory):
     datum_zavrsetka=factory.Faker('date_time')
     radno_mjesto=factory.Faker('job')
     napomena=factory.Faker("sentence", nb_words=10)
+    broj_odradenih_sati=factory.fuzzy.FuzzyInteger(0, 999)
     praksa_kompanija=factory.Iterator(Kompanija.objects.all())
     praksa_mentor=factory.Iterator(Mentor.objects.all())
     

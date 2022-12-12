@@ -61,6 +61,7 @@ class Praksa(models.Model):
     datum_zavrsetka=models.DateField(blank=True, null=True)
     radno_mjesto=models.CharField(max_length=50)
     napomena=models.TextField(blank=True)
+    broj_odradenih_sati=models.IntegerField()
     praksa_kompanija=models.ForeignKey(Kompanija, on_delete=models.CASCADE)
     praksa_mentor=models.ForeignKey(Mentor, on_delete=models.CASCADE)
     
