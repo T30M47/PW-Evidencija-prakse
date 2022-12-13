@@ -5,9 +5,10 @@
 {% for dnevnik in studentdnevnik_list %}
     <div class="dnevnik">
         <h4>Student: {{dnevnik.student}}</h4>
-        <p>Ukupno sati rada: {{dnevnik.ukupni_sati_rada}}</p>
-        <p>Broj Radnih Mjesta: {{dnevnik.broj_radnih_mjesta}}</p>
-        <p>Broj Kompanija: {{dnevnik.broj_kompanija}}</p>
+        <p>Prakse:
+            {% for praksa in dnevnik.prakse.all %}{{praksa}}, sati rada:{{praksa.broj_odradenih_sati}}<br>{% endfor %}</p>
+        </p>
+       
     </div>
 {% endfor %}
 {% endblock %}

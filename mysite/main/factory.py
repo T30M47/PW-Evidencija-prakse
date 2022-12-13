@@ -36,9 +36,15 @@ class StudentDnevnikFactory(DjangoModelFactory):
         model=StudentDnevnik
 
     student=factory.Iterator(Student.objects.all())
-    ukupni_sati_rada=factory.Faker('pyint', min_value=0, max_value=999)
-    broj_radnih_mjesta=factory.Faker('pyint', min_value=0, max_value=5)
-    broj_kompanija=factory.Faker('pyint', min_value=0, max_value=5)
+    @factory.post_generation
+    def prakse(self, create, extracted, **kwargs):
+        if not create:
+            return
+        if extracted:
+            for praksa in extracted:
+                self.prakse.add(praksa)
+                
+    
 
 
 class KompanijaFactory(DjangoModelFactory):

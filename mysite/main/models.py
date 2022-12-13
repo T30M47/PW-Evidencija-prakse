@@ -23,14 +23,7 @@ class Student(models.Model):
     def __str__(self):
         return '{} {}, JMBAG: {}'.format(self.student_ime, self.student_prezime, self.student_JMBAG)
 
-class StudentDnevnik(models.Model):
-    student=models.OneToOneField(Student, on_delete=models.CASCADE)
-    ukupni_sati_rada=models.CharField(max_length=30)
-    broj_radnih_mjesta=models.IntegerField()
-    broj_kompanija=models.IntegerField()
 
-    def __str__(self):
-        return 'Dnevnik od studenta: {}'.format(self.student) 
 
 class Kompanija(models.Model):
     kompanija_OIB=models.CharField(max_length=11, primary_key=True, validators=[MinLengthValidator(11)])
@@ -68,3 +61,11 @@ class Praksa(models.Model):
 
     def __str__(self):
         return 'student: {}, Radno mjesto: {}, kompanija: {}'.format(self.student_praksa, self.radno_mjesto, self.praksa_kompanija)
+
+
+class StudentDnevnik(models.Model):
+    student=models.OneToOneField(Student, on_delete=models.CASCADE)
+    prakse=models.ManyToManyField(Praksa)
+
+    def __str__(self):
+        return 'Dnevnik od studenta: {}'.format(self.student) 

@@ -9,7 +9,7 @@
         <p>Prezime: {{student.student_prezime}}</p>
         <p>Email: {{student.student_email}}</p>
         <p>Fakultet: <br>
-            {% for fakultet in student.student_fakultet.all %}{{fakultet}}<br>{% endfor %}</p>
+        <p>{% for fakultet in student.student_fakultet.all %}{{fakultet}}<br>{% endfor %}</p>
     </div>
 {% endfor %}
 {% endblock %}
