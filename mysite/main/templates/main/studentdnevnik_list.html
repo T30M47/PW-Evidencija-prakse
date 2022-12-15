@@ -9,6 +9,7 @@
             {% for praksa in dnevnik.prakse.all %}{{praksa}}, sati rada:{{praksa.broj_odradenih_sati}}<br>{% endfor %}</p>
             <br>
         </p>
+        <p>Ukupni broj sati rada: {{dnevnik.ukupni_broj_sati_rada}}</p>
        
     </div>
 {% endfor %}

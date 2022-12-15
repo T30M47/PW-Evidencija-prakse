@@ -43,6 +43,7 @@ class StudentDnevnikFactory(DjangoModelFactory):
         if extracted:
             for praksa in extracted:
                 self.prakse.add(praksa)
+    ukupni_broj_sati_rada=factory.fuzzy.FuzzyInteger(0, 999)
                 
     
 

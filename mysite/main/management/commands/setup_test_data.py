@@ -30,7 +30,7 @@ class Command(BaseCommand):
             student = StudentFactory()
         for _ in range(NUM_FAKULTETS):
             fakultet = FakultetFactory()
-        for _ in range(NUM_FAKULTETS):
+        for _ in range(NUM_STUDENTDNEVNIKS):
             studentDnevnik = StudentDnevnikFactory()
         for _ in range(NUM_KOMPANIJAS):
             kompanija=KompanijaFactory()

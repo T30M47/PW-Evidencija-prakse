@@ -66,6 +66,7 @@ class Praksa(models.Model):
 class StudentDnevnik(models.Model):
     student=models.OneToOneField(Student, on_delete=models.CASCADE)
     prakse=models.ManyToManyField(Praksa)
+    ukupni_broj_sati_rada=models.IntegerField()
 
     def __str__(self):
         return 'Dnevnik od studenta: {}'.format(self.student) 
