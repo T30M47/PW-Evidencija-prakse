@@ -8,7 +8,7 @@ class StudentFactory(DjangoModelFactory):
     class Meta:
         model = Student
 
-    student_JMBAG=factory.fuzzy.FuzzyInteger(0000000000, 9999999999)
+    student_JMBAG=factory.fuzzy.FuzzyInteger(1000000000, 9999999999)
     student_ime=factory.Faker('first_name')
     student_prezime=factory.Faker('last_name')
     student_email=factory.Faker('free_email')
@@ -24,7 +24,7 @@ class FakultetFactory(DjangoModelFactory):
     class Meta:
         model=Fakultet
      
-    fakultet_OIB=factory.fuzzy.FuzzyInteger(00000000000, 99999999999)
+    fakultet_OIB=factory.fuzzy.FuzzyInteger(10000000000, 99999999999)
     fakultet_naziv=factory.Faker('company')
     fakultet_email=factory.Faker('free_email')
     fakultet_adresa=factory.Faker('address')
@@ -52,7 +52,7 @@ class KompanijaFactory(DjangoModelFactory):
     class Meta:
         model=Kompanija
     
-    kompanija_OIB=factory.fuzzy.FuzzyInteger(00000000000, 99999999999)
+    kompanija_OIB=factory.fuzzy.FuzzyInteger(10000000000, 99999999999)
     kompanija_naziv=factory.Faker('company')
     kompanija_email=factory.Faker('free_email')
     kompanija_adresa=factory.Faker('address')
@@ -62,7 +62,7 @@ class MentorFactory(DjangoModelFactory):
     class Meta:
         model=Mentor
     
-    mentor_OIB=factory.fuzzy.FuzzyInteger(00000000000, 99999999999)
+    mentor_OIB=factory.fuzzy.FuzzyInteger(10000000000, 99999999999)
     mentor_ime=factory.Faker('first_name')
     mentor_prezime=factory.Faker('last_name')
     mentor_email=factory.Faker('free_email')
