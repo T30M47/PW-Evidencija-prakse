@@ -25,11 +25,17 @@ class Command(BaseCommand):
             m.objects.all().delete()
 
         self.stdout.write("Creating new data...")
-
-        for _ in range(NUM_STUDENTS):
-            student = StudentFactory()
+        fakulteti=[]
+        
         for _ in range(NUM_FAKULTETS):
             fakultet = FakultetFactory()
+            fakulteti.append(fakultet)
+        for _ in range(NUM_STUDENTS):
+            student = StudentFactory()
+            moguci=[1,2]
+            odabir=random.choice(moguci)
+            student_fakulteti=random.choices(fakulteti, k=odabir)
+            student.student_fakultet.add(*student_fakulteti)
         for _ in range(NUM_STUDENTDNEVNIKS):
             studentDnevnik = StudentDnevnikFactory()
         for _ in range(NUM_KOMPANIJAS):
