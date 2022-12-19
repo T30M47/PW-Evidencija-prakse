@@ -26,7 +26,7 @@ class Command(BaseCommand):
 
         self.stdout.write("Creating new data...")
         fakulteti=[]
-        
+        prakseList=[]
         for _ in range(NUM_FAKULTETS):
             fakultet = FakultetFactory()
             fakulteti.append(fakultet)
@@ -36,13 +36,17 @@ class Command(BaseCommand):
             odabir=random.choice(moguci)
             student_fakulteti=random.choices(fakulteti, k=odabir)
             student.student_fakultet.add(*student_fakulteti)
-        for _ in range(NUM_STUDENTDNEVNIKS):
-            studentDnevnik = StudentDnevnikFactory()
         for _ in range(NUM_KOMPANIJAS):
             kompanija=KompanijaFactory()
         for _ in range(NUM_MENTORS):
             mentor=MentorFactory()
         for _ in range(NUM_PRAKSAS):
             praksa=PraksaFactory()
-            
+            prakseList.append(praksa)
+        for _ in range(NUM_STUDENTDNEVNIKS):
+            studentDnevnik = StudentDnevnikFactory()
+            moguci=[1,2,3]
+            odabir=random.choice(moguci)
+            student_prakse=random.choices(prakseList, k=odabir)
+            studentDnevnik.prakse.add(*student_prakse)
 
